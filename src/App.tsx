@@ -22,18 +22,22 @@ const App: React.FC = () => {
     <div className='flex flex-col gap-8 p-32'>
       <Card className='p-8'>
         <CardTitle className='font-bold'>Automatic</CardTitle>
-        <CardContent>
+        <CardContent className='flex flex-col gap-8'>
           <div className='flex justify-center items-center'>
-            <h1 className='font-medium text-2xl'>Progress: {autoProgress}%</h1>
+            <div className='w-64 min:w-auto'>
+              <h1 className='font-medium text-2xl'>Progress: {autoProgress}%</h1>
+            </div>
             <SvgRings progress={autoProgress} />
           </div>
         </CardContent>
       </Card>
       <Card className='p-8'>
         <CardTitle className='font-bold'>Manual</CardTitle>
-        <CardContent>
-          <div className='flex justify-evenly items-center'>
-            <h1 className='font-medium text-2xl'>Progress: {manualProgress}%</h1>
+        <CardContent className='flex flex-col gap-8'>
+          <div className='flex justify-center items-center'>
+            <div className='w-64 min:w-auto'>
+              <h1 className='font-medium text-2xl'>Progress: {manualProgress}%</h1>
+            </div>
             <SvgRings progress={manualProgress} />
           </div>
           <div className='flex justify-center'>

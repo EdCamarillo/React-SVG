@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import SvgRings from './Animations/SvgRings'
 import { Slider } from './components/slider'
 import { Card, CardContent, CardTitle } from './components/card'
+import { Progress } from './components/progress'
 
 const App: React.FC = () => {
   const [autoProgress, setAutoProgress] = useState<number>(0)
@@ -28,6 +29,9 @@ const App: React.FC = () => {
               <h1 className='font-medium text-2xl'>Progress: {autoProgress}%</h1>
             </div>
             <SvgRings progress={autoProgress} />
+          </div>
+          <div className='flex justify-center'>
+            <Progress className='w-4/5' value={autoProgress} />
           </div>
         </CardContent>
       </Card>

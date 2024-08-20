@@ -19,7 +19,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className='flex flex-col gap-24 p-32'>
+    <div className='flex flex-col gap-8 p-32'>
       <Card className='p-8'>
         <CardTitle className='font-bold'>Automatic</CardTitle>
         <CardContent>

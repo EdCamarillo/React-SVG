@@ -3,6 +3,7 @@ import SvgRings from './Animations/SvgRings'
 import { Slider } from './components/slider'
 import { Card, CardContent, CardTitle } from './components/card'
 import { Progress } from './components/progress'
+import { Button } from './components/button'
 
 const App: React.FC = () => {
   const [autoProgress, setAutoProgress] = useState<number>(0)
@@ -19,8 +20,12 @@ const App: React.FC = () => {
     setManualProgress(value[0])
   }
 
+  const handleButtonClick = (value: number, setter: React.Dispatch<React.SetStateAction<number>>) => {
+    setter && setter(value)
+  }
+
   return (
-    <div className='flex flex-col gap-8 p-32'>
+    <div className='flex flex-col gap-8 p-9'>
       <Card className='p-8'>
         <CardTitle className='font-bold'>Automatic</CardTitle>
         <CardContent className='flex flex-col gap-8'>
@@ -32,6 +37,16 @@ const App: React.FC = () => {
           </div>
           <div className='flex justify-center'>
             <Progress className='w-4/5' value={autoProgress} />
+          </div>
+          <div className='flex justify-center'>
+            <Button
+              variant={'outline'}
+              onClick={() => {
+                handleButtonClick(0, setAutoProgress)
+              }}
+            >
+              Reset
+            </Button>
           </div>
         </CardContent>
       </Card>
@@ -45,7 +60,17 @@ const App: React.FC = () => {
             <SvgRings progress={manualProgress} />
           </div>
           <div className='flex justify-center'>
-            <Slider className='w-4/5' defaultValue={[0]} max={100} step={1} onValueChange={handleSliderChange} />
+            <Slider className='w-4/5' defaultValue={[0]} max={100} step={1} value={[manualProgress]} onValueChange={handleSliderChange} />
+          </div>
+          <div className='flex justify-center'>
+            <Button
+              variant={'outline'}
+              onClick={() => {
+                handleButtonClick(0, setManualProgress)
+              }}
+            >
+              Reset
+            </Button>
           </div>
         </CardContent>
       </Card>

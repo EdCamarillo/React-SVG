@@ -1,3 +1,13 @@
+
+## Acceptance Criteria:
+- Pulsate (scale up and scale down)
+- Nodes filled up depending on the progress (%)
+- Rotates if All nodes are filled up
+- Full animation is a single SVG file that can be loaded in NextJS
+- Seamless loop
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

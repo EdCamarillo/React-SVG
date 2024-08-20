@@ -36,7 +36,7 @@ const SvgRings: React.FC<SvgRingsProps> = ({ progress }) => {
   }, [progress])
 
   return (
-    <svg viewBox='0 0 200 180' width='200' height='180' className={isRotating ? 'rotate' : ''} >
+    <svg viewBox='0 0 200 180' width='200' height='180' className={isRotating ? 'rotate' : ''}>
       {/* Top circle */}
       <g transform='translate(100, 40)'>
         <circle className='ring' cx='0' cy='0' r='30' stroke='#6e6e6e' strokeWidth='8' fill='none' />

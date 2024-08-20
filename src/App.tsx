@@ -24,16 +24,16 @@ const App: React.FC = () => {
         <CardTitle className='font-bold'>Automatic</CardTitle>
         <CardContent>
           <div className='flex justify-center items-center'>
-            <h1 className='font-medium text-2xl justify-self-center'>Progress: {autoProgress}%</h1>
+            <h1 className='font-medium text-2xl'>Progress: {autoProgress}%</h1>
             <SvgRings progress={autoProgress} />
           </div>
         </CardContent>
       </Card>
       <Card className='p-8'>
         <CardTitle className='font-bold'>Manual</CardTitle>
-        <CardContent className='flex flex-col gap-8'>
-          <div className='flex justify-center items-center'>
-            <h1 className='font-medium text-2xl justify-self-center'>Progress: {manualProgress}%</h1>
+        <CardContent>
+          <div className='flex justify-evenly items-center'>
+            <h1 className='font-medium text-2xl'>Progress: {manualProgress}%</h1>
             <SvgRings progress={manualProgress} />
           </div>
           <div className='flex justify-center'>

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './SvgRings.css'
 
-interface SvgRingsLineProps {
+interface SvgRings2Props {
   progress: number
   guid: string 
   isRotating: boolean 
 }
 
-const SvgRingsLine: React.FC<SvgRingsLineProps> = ({ progress }) => {
+const SvgRings2: React.FC<SvgRings2Props> = ({ progress }) => {
   const [isRotating, setIsRotating] = useState<boolean>(false)
 
   // Available only in secure context
@@ -72,4 +72,4 @@ const SvgRingsLine: React.FC<SvgRingsLineProps> = ({ progress }) => {
   )
 }
 
-export default SvgRingsLine
+export default SvgRings2

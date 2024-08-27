@@ -1,46 +1,144 @@
 @keyframes pulse {
-    0%, 100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
+  0%, 100% {
+    transform: scale(1);
   }
-  
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  50% {
+    transform: scale(1.1);
   }
-  
-  .ring {
-    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .inner-circle {
-    opacity: 0;
-    transition: opacity 0.5s ease;
+  100% {
+    transform: rotate(360deg);
   }
-  
-  .g:nth-child(1) .ring,
-  .g:nth-child(1) .inner-circle {
-    animation-delay: 0s;
+}
+
+@keyframes fast-rotate {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .g:nth-child(2) .ring,
-  .g:nth-child(2) .inner-circle {
-    animation-delay: 0.5s;
+  100% {
+    transform: rotate(360deg);
   }
-  
-  .g:nth-child(3) .ring,
-  .g:nth-child(3) .inner-circle {
-    animation-delay: 1s;
+}
+
+@keyframes slow-rotate {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .rotate {
-    animation: rotate 1s ease-in-out;
+  100% {
+    transform: rotate(360deg);
   }
-  
+}
+
+.ring {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.inner-circle {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.svg-container {
+  transform-origin: center;
+}
+
+.g:nth-child(1) .ring,
+.g:nth-child(1) .inner-circle {
+  animation-delay: 0s;
+}
+
+.g:nth-child(2) .ring,
+.g:nth-child(2) .inner-circle {
+  animation-delay: 0.5s;
+}
+
+.g:nth-child(3) .ring,
+.g:nth-child(3) .inner-circle {
+  animation-delay: 1s;
+}
+
+.rotate {
+  animation: rotate 1s ease-in-out;
+  position: relative;
+}
+
+.slow-rotate {
+  animation: slow-rotate 24s linear infinite;
+  position: relative;
+}
+
+.fast-rotate {
+  animation: fast-rotate 1s ease-in-out;
+}
+
+/*  */
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes rotate-120 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(120deg);
+  }
+}
+
+@keyframes rotate-240 {
+  0% {
+    transform: rotate(120deg);
+  }
+  100% {
+    transform: rotate(240deg);
+  }
+}
+
+@keyframes rotate-360 {
+  0% {
+    transform: rotate(240deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes final-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.pulsate {
+  animation: pulse 0.5s ease-in-out;
+}
+
+.rotate-0 {
+  animation: rotate-120 1s ease-in-out forwards;
+}
+
+.rotate-2 {
+  animation: rotate-240 1s ease-in-out forwards;
+}
+
+.rotate-4 {
+  animation: rotate-360 1s ease-in-out forwards;
+}
+
+.rotate-100 {
+  animation: final-rotate 1s linear forwards;
+}
